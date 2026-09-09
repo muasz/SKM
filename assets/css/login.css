@@ -1,0 +1,90 @@
+        :root {
+            --ink: #26334a;
+            --muted: #7a8ba5;
+            --green: #069c70;
+            --mint: #dff7ee;
+            --line: #e0e7ef;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: #f3f9f7;
+            color: var(--ink);
+            font-family: "DM Sans", Arial, sans-serif;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 42px;
+        }
+
+        .login-card {
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            width: min(1120px, 100%);
+            min-height: 660px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #cfeee2;
+            border-radius: 18px;
+            box-shadow: 0 18px 42px rgba(47, 109, 92, .12);
+        }
+
+        .welcome-panel {
+            position: relative;
+            overflow: hidden;
+            padding: 38px 48px;
+            background: linear-gradient(135deg, #f0fbf6, #c9f1e5);
+        }
+
+        .brand { display: flex; align-items: center; gap: 11px; }
+        .crest { width: 38px; height: 49px; object-fit: contain; filter: drop-shadow(0 2px 3px rgba(28, 72, 94, .2)); }
+        .brand h1 { margin: 0; font-size: 23px; letter-spacing: -.4px; }
+        .brand p { margin: 3px 0 0; color: #008861; font-size: 12px; font-weight: 600; }
+        .brand small { display: block; margin-top: 8px; color: #008861; font-size: 13px; font-weight: 700; }
+
+        .slogan { margin: 46px 0 0; font-size: 25px; line-height: 1.25; font-weight: 600; }
+        .slogan strong { color: #008d67; display: block; }
+
+        .scene { position: absolute; right: 16%; bottom: 36px; width: 68%; height: 166px; }
+        .sun { position: absolute; left: 45%; top: 0; width: 82px; height: 82px; border-radius: 50%; background: rgba(255, 244, 146, .7); filter: blur(8px); }
+        .cloud { position: absolute; top: 20px; width: 56px; height: 16px; border-radius: 50%; background: rgba(255,255,255,.8); }
+        .cloud::after { content: ""; position: absolute; left: 20px; bottom: -3px; width: 27px; height: 20px; border-radius: 50%; background: inherit; }
+        .cloud.one { left: 7%; } .cloud.two { right: 8%; top: 10px; }
+        .hill { position: absolute; bottom: 0; width: 100%; height: 78px; border-radius: 50% 50% 0 0 / 22% 22% 0 0; background: #43d47c; }
+        .hill::after { content: ""; position: absolute; right: 0; top: 18px; width: 48%; height: 60px; background: #a5ebcf; clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%); }
+        .children { position: absolute; bottom: 0; left: 18%; width: 68%; height: 150px; }
+        .children img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; }
+
+        .form-panel { display: flex; align-items: center; padding: 58px 60px; }
+        .form-content { width: 100%; max-width: 355px; margin: 0 auto; }
+        .form-content h2 { margin: 0; font-size: 31px; letter-spacing: -.8px; }
+        .intro { margin: 9px 0 32px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+        .error { padding: 10px 12px; margin-bottom: 16px; color: #a12b2b; background: #fff0f0; border-radius: 8px; font-size: 12px; }
+        .field { position: relative; margin-bottom: 13px; }
+        .field span { position: absolute; left: 14px; top: 12px; color: #8ca1bb; font-size: 14px; }
+        input { width: 100%; height: 52px; padding: 0 16px 0 40px; color: var(--ink); border: 1px solid var(--line); border-radius: 9px; outline: 0; font: inherit; font-size: 14px; }
+        input:focus { border-color: #55c7a3; box-shadow: 0 0 0 3px rgba(85,199,163,.14); }
+        button { width: 100%; height: 50px; margin-top: 6px; color: #fff; background: var(--green); border: 0; border-radius: 9px; cursor: pointer; font: inherit; font-size: 15px; font-weight: 700; box-shadow: 0 4px 8px rgba(6,156,112,.2); }
+        button:hover { background: #078761; }
+        .forgot { display: block; margin-top: 33px; color: #00986d; text-align: center; text-decoration: none; font-size: 13px; }
+        .security { margin-top: 46px; padding-top: 22px; border-top: 1px solid #edf1f4; color: #9cacbd; text-align: center; font-size: 12px; }
+        .security b { color: #009c70; margin-right: 6px; }
+        .copyright { margin: 55px auto 0; color: #9aafc3; text-align: center; font-size: 12px; }
+
+        @media (max-width: 720px) {
+            .page { padding: 18px; }
+            .login-card { grid-template-columns: 1fr; }
+            .welcome-panel { min-height: 300px; padding: 24px; }
+            .slogan { margin-top: 25px; font-size: 18px; }
+            .scene { bottom: 15px; height: 125px; }
+            .form-panel { padding: 38px 25px; }
+            .copyright { margin-top: 24px; }
+        }
