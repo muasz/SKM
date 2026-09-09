@@ -1,10 +1,11 @@
 FROM php:8.2-apache
 
-# Pastikan hanya MPM prefork yang digunakan
-RUN a2dismod mpm_event mpm_worker mpm_event 2>/dev/null || true \
+# Hapus semua MPM Apache yang aktif
+RUN rm -f /etc/apache2/mods-enabled/mpm_*.load \
+    /etc/apache2/mods-enabled/mpm_*.conf \
     && a2enmod mpm_prefork
 
-# Install extension MySQL untuk PHP
+# Install MySQL extension
 RUN docker-php-ext-install mysqli
 
 # Copy project
